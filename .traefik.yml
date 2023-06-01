@@ -1,9 +1,9 @@
 displayName: X-Request-Start
 type: middleware
 
-import: github.com/EasySolutionsIO/traefikxrequeststart
+import: github.com/hitz-group/traefik-copy-auth-header
 
-summary: 'Adds the X-Request-Start header which is used by multiple instrumentation tools'
+summary: 'Add the header authorization to request based on apptoken header'
 
 testData:
-  name: "traefikxrequeststart"
+  name: "copy_auth_header"
