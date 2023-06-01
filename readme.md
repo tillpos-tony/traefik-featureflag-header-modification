@@ -1,5 +1,5 @@
-# X-Request-Start Traefik plugin
+# traefik-copy-auth-header Traefik plugin
 
 Under Development. Experimental. Do not use in production.
 
-Adds X-Request-Start Header to the requests. Using milliseconds like Heroku is doing. https://devcenter.heroku.com/articles/http-routing#heroku-headers
+Check for Authorization header exist in request or not. if not copy the value from apptoken header
