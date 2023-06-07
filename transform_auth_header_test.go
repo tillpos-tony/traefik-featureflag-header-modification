@@ -1,4 +1,4 @@
-package copy_auth_header_test
+package transform_auth_header_test
 
 import (
 	"context"
@@ -10,12 +10,12 @@ import (
 )
 
 func TestXRequestStart(t *testing.T) {
-	cfg := copy_auth_header.CreateConfig()
+	cfg := transform_auth_header.CreateConfig()
 
 	ctx := context.Background()
 	next := http.HandlerFunc(func(rw http.ResponseWriter, req *http.Request) {})
 
-	handler, err := copy_auth_header.New(ctx, next, cfg, "copy_auth_header")
+	handler, err := transform_auth_header.New(ctx, next, cfg, "transform_auth_header")
 	if err != nil {
 		t.Fatal(err)
 	}

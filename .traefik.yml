@@ -6,4 +6,4 @@ import: github.com/hitz-group/traefik-copy-auth-header
 summary: 'Add the header authorization to request based on apptoken header'
 
 testData:
-  name: "copy_auth_header"
+  name: "transform_auth_header"
