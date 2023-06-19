@@ -3,8 +3,8 @@ package featureflag_header_modification
 
 import (
 	"context"
-	"fmt"
 	"net/http"
+	"os"
 )
 
 // Config the plugin configuration.
@@ -33,6 +33,6 @@ func New(ctx context.Context, next http.Handler, config *Config, name string) (h
 func (a *FeatureflagHeaderModification) ServeHTTP(rw http.ResponseWriter, req *http.Request) {
 	// TODO: implementation
 	org := req.Header.Get("X-User-Org")
-	fmt.Println("traefik featuer flag header modification", org)
+	os.Stdout.WriteString("traefik featuer flag header modification" + org)
 	a.next.ServeHTTP(rw, req)
 }
