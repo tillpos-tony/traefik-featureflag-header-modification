@@ -1,4 +1,4 @@
-package transform_auth_header_test
+package featureflag_header_modification_test
 
 import (
 	"context"
@@ -10,12 +10,12 @@ import (
 )
 
 func TestXRequestStart(t *testing.T) {
-	cfg := transform_auth_header.CreateConfig()
+	cfg := featureflag_header_modification.CreateConfig()
 
 	ctx := context.Background()
 	next := http.HandlerFunc(func(rw http.ResponseWriter, req *http.Request) {})
 
-	handler, err := transform_auth_header.New(ctx, next, cfg, "transform_auth_header")
+	handler, err := featureflag_header_modification.New(ctx, next, cfg, "featureflag_header_modification")
 	if err != nil {
 		t.Fatal(err)
 	}

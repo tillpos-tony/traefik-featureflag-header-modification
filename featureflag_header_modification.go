@@ -1,11 +1,9 @@
 // Package traefikxrequeststart a plugin for traefik which adds X-Request-Start header.
-package transform_auth_header
+package featureflag_header_modification
 
 import (
 	"context"
-	"fmt"
 	"net/http"
-	"time"
 )
 
 // Config the plugin configuration.
@@ -32,10 +30,6 @@ func New(ctx context.Context, next http.Handler, config *Config, name string) (h
 }
 
 func (a *XRequestStart) ServeHTTP(rw http.ResponseWriter, req *http.Request) {
-	authorization := req.Header.Get("Authorization")
-	if authorization != "" && !strings.HasPrefix(authorization, "Bearer ") {
-		req.Header.Set("Authorization", "Bearer "+ authorization)
-	}
-
+	// TODO: implementation
 	a.next.ServeHTTP(rw, req)
 }
