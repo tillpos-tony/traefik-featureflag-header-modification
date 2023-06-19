@@ -1,9 +1,9 @@
-displayName: X-Request-Start
+displayName: FeatureFlag-Header-Modification
 type: middleware
 
-import: github.com/hitz-group/traefik-copy-auth-header
+import: github.com/hitz-group/traefik-featureflag-header-modification
 
-summary: 'Add the header authorization to request based on apptoken header'
+summary: 'Update request header by checking Flipt feature flag config'
 
 testData:
   name: "featureflag_header_modification"
