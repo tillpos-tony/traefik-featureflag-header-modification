@@ -1,5 +1,5 @@
-# traefik-trasform-auth-header Traefik plugin
+# c Traefik plugin
 
 Under Development. Experimental. Do not use in production.
 
-Check for Authorization header exist in request or not. if yes transform it to Bearer token scheme
+Read the featue flag configuration from Flipt service with organization header. receive the value and set it to request header
