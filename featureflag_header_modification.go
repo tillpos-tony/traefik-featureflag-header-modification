@@ -88,6 +88,10 @@ func (config *FeatureflagHeaderModification) ServeHTTP(rw http.ResponseWriter, r
 		}
 	}
 	os.Stdout.WriteString("traefik featuer flag header modification" + org)
+	if len(org) == 0 {
+		config.next.ServeHTTP(rw, req)
+		return
+	}
 
 	payload := []byte(`{"entityId":"` + org + `","flagKey":"` + config.flagKey + `","context":{"` + orgHeaderName + `":"` + org + `"}}`)
 
