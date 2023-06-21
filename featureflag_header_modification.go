@@ -114,8 +114,8 @@ func (config *FeatureflagHeaderModification) ServeHTTP(rw http.ResponseWriter, r
 		config.next.ServeHTTP(rw, req)
 		return
 	}
-	if fliptEvaluateResponse.Match == true && fliptEvaluateResponse.Value == "true" {
-		req.Header.Set(config.headerResult, "1")
+	if fliptEvaluateResponse.Match == true {
+		req.Header.Set(config.headerResult, fliptEvaluateResponse.Value)
 	}
 
 	config.next.ServeHTTP(rw, req)
